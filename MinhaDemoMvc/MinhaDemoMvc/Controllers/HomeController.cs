@@ -12,17 +12,30 @@ namespace MinhaDemoMvc.Controllers
     {
         public IActionResult Index(string Id, Guid categoria)
         {
-            return View();
+            var filme = new Filme()
+            {
+                Titulo = "Oi",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 20000
+            };
+
+            return RedirectToAction("Privacy", filme);
+            //return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
-            //return Json("{'nome':'Tiago'}");
-            //var fileBytes = System.IO.File.ReadAllBytes(@"F:\INSTALAR.txt");
-            //var fileName = "ola.txt";
-            //return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+            if (ModelState.IsValid)
+            {
 
-            return Content("Qualquer coisa");
+            }
+
+            foreach (var error in ModelState.Values.SelectMany(m => m.Errors))
+                Console.WriteLine(error.ErrorMessage);
+
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
