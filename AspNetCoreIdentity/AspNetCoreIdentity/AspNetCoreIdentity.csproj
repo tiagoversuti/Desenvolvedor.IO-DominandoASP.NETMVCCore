@@ -8,6 +8,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="kisslog.aspnetcore" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="2.2.5" />
