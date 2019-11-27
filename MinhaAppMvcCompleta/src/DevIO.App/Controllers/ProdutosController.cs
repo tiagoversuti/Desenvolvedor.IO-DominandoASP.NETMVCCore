@@ -115,7 +115,7 @@ namespace DevIO.App.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
-            var produto = ObterProduto(id);
+            var produto = await ObterProduto(id);
 
             if (produto== null)
             {
