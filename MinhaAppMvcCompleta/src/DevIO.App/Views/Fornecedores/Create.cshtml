@@ -10,7 +10,8 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <vc:Summary></vc:Summary>
 
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
@@ -36,7 +37,7 @@
             <h4>Endereço</h4>
             <hr />
 
-            <partial name="_Endereco"/>
+            <partial name="_Endereco" />
 
             <div class="form-group">
                 <input type="submit" value="Cadastrar" class="btn btn-primary" />
