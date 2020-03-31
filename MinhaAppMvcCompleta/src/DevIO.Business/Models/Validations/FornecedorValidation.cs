@@ -18,7 +18,7 @@ namespace DevIO.Business.Models.Validations
             {
                 RuleFor(f => f.Documento.Length).Equal(CpfValidacao.TamanhoCpf)
                     .WithMessage("O campo Documento precisa ser {ComparisonValue} caracteres e foi fornecido {PropertyValue}.");
-                RuleFor(f => CpfValidacao.Validar(f.Documento)).Equal(true)
+                RuleFor(f => CpfValidacao.Validar(f.Documento)).Equal(false)
                     .WithMessage("O documento fornecido é inválido.");
             });
 
@@ -26,7 +26,7 @@ namespace DevIO.Business.Models.Validations
             {
                 RuleFor(f => f.Documento.Length).Equal(CnpjValidacao.TamanhoCnpj)
                     .WithMessage("O campo Documento precisa ser {ComparisonValue} caracteres e foi fornecido {PropertyValue}.");
-                RuleFor(f => CnpjValidacao.Validar(f.Documento)).Equal(true)
+                RuleFor(f => CnpjValidacao.Validar(f.Documento)).Equal(false)
                     .WithMessage("O documento fornecido é inválido.");
             });
         }
